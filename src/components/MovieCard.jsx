@@ -1,12 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
   return (
-    <div className="movie-card" style={{ border: "1px solid #ccc", padding: "10px", margin: "10px", width: "200px" }}>
-      <img src={movie.posterURL} alt={movie.title} style={{ width: "100%" }} />
-      <h3>{movie.title}</h3>
-      <p>{movie.description}</p>
-      <p>Rating: {movie.rating}/5</p>
+    <div
+      style={{
+        width: "200px",
+        border: "1px solid #ccc",
+        borderRadius: "8px",
+        textAlign: "center",
+        overflow: "hidden",
+        boxShadow: "0 2px 5px rgba(0,0,0,0.2)"
+      }}
+    >
+      <Link to={`/movie/${movie.id}`} style={{ textDecoration: "none", color: "black" }}>
+        <img src={movie.posterURL} alt={movie.title} style={{ width: "100%" }} />
+        <h3>{movie.title}</h3>
+        <p>Rating: {movie.rating} ⭐</p>
+      </Link>
     </div>
   );
 };

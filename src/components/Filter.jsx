@@ -2,7 +2,7 @@ import React from "react";
 
 const Filter = ({ searchTitle, setSearchTitle, searchRating, setSearchRating }) => {
   return (
-    <div style={{ margin: "20px 0" }}>
+    <div style={{ marginTop: "20px" }}>
       <input
         type="text"
         placeholder="Search by title"
@@ -12,9 +12,7 @@ const Filter = ({ searchTitle, setSearchTitle, searchRating, setSearchRating }) 
       />
       <input
         type="number"
-        placeholder="Search by rating"
-        min="1"
-        max="5"
+        placeholder="Min rating"
         value={searchRating}
         onChange={(e) => setSearchRating(e.target.value)}
       />
